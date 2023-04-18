@@ -8,7 +8,7 @@ import java.nio.charset.StandardCharsets;
 public class client {
 
     public static final int PORT = 80;
-    public static final String SERVER_ADDR = "www.google.com";//"142.250.190.36";
+    public static final String SERVER_ADDR = "127.0.0.1" ; // ""www.google.com";//"142.250.190.36";
     public static final String CRLF = "\r\n";
     public static final String EOH = CRLF + CRLF;
 
@@ -24,7 +24,7 @@ public class client {
             PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(dataOutputStream, StandardCharsets.ISO_8859_1));
             printWriter.print("GET / HTTP/1.1" + CRLF);
             printWriter.print("Host: " + SERVER_ADDR + CRLF);
-            printWriter.print("Connection: keep-alive" + CRLF);
+            printWriter.print("Connection: close" + CRLF);
             printWriter.print("Accept: */*" + EOH);
             printWriter.flush();
 
